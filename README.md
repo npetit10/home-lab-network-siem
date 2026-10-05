@@ -6,11 +6,26 @@ A hands-on cybersecurity portfolio project simulating an enterprise network envi
 
 ## Project Overview
 
-This project builds a realistic "company network" inside a home lab using virtual machines. A pfSense firewall enforces strict zone-based rules across four network segments, and a Wazuh SIEM ingests logs from every machine to detect threats in real time.
+This project builds a realistic "company network" inside a home lab using virtual machines. A pfSense firewall enforces strict zone-based rules across three internal zones (DMZ, LAN, Management) and the WAN, and a Wazuh SIEM ingests logs from every machine to detect threats in real time.
 
-An attacker attempts to breach a DMZ web server and pivot into the internal LAN. The firewall blocks the lateral movement. The SIEM captures every step: reconnaissance, brute-force attempts, and the blocked pivot, resulting in a real incident that is documented in a formal report.
+The lab scenario: an attacker attempts to breach a DMZ web server and pivot into the internal LAN. The firewall blocks the lateral movement, and the SIEM captures every step (reconnaissance, brute-force attempts, and the blocked pivot), which is then written up as a formal incident report.
 
 ---
+
+## Project Status
+
+🚧 **In progress (started July 2026).** This README documents the design. Configs, detection rules, and attack evidence are being added to the folders below as each phase is completed.
+
+- [ ] Network diagram and threat model
+- [ ] pfSense VLAN and firewall rule exports
+- [ ] Wazuh deployment and agent onboarding
+- [ ] Custom Wazuh rules mapped to MITRE ATT&CK
+- [ ] Attack scenarios 01 to 05 with alert evidence
+- [ ] Incident report
+
+---
+
+## Architecture
 
 ### Zones
 
@@ -47,7 +62,7 @@ An attacker attempts to breach a DMZ web server and pivot into the internal LAN.
 
 ---
 
-## Repository Structure
+## Repository Structure (planned)
 
 ```
 home-lab-network-siem/
@@ -70,8 +85,6 @@ home-lab-network-siem/
 ```
 
 ---
-
-
 
 ## Skills Demonstrated
 
